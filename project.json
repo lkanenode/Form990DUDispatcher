@@ -12,7 +12,8 @@
     "UiPath.PDF.Activities": "[3.20.0-preview]",
     "UiPath.System.Activities": "[24.10.3]",
     "UiPath.Testing.Activities": "[24.10.1]",
-    "UiPath.UIAutomation.Activities": "[24.10.2]"
+    "UiPath.UIAutomation.Activities": "[24.10.2]",
+    "UiPathTeam.ImagesToPDF.Activities": "[1.0.14]"
   },
   "webServices": [],
   "entitiesStores": [],
