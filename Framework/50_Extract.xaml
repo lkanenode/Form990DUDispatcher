@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1081.3333333333333,1358.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>923.3333333333334,1358.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_50_Extract_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -140,153 +140,24 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - Start Data Extraction" sap:VirtualizedContainerService.HintSize="520,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[in_Config(&quot;LogMessage_DataExtractionStart&quot;) + &quot; &quot; + in_ClassificationResult.DocumentTypeId + &quot; (pag &quot; + (in_ClassificationResult.DocumentBounds.StartPage +1).ToString + &quot;-&quot; + (in_ClassificationResult.DocumentBounds.StartPage + in_ClassificationResult.DocumentBounds.PageCount).ToString + &quot;)&quot;  + Environment.NewLine + in_Config(&quot;logKey&quot;)]" />
-    <ui:RetryScope sap2010:Annotation.AnnotationText="Extractors might need to make API calls. The retry mechanism is used to compensate for minor fluctuations in network stability and other recoverable issues.&#xA;&#xA;MaxExecutionAttemptsExtract overrides the default number of execution attempts." DisplayName="Retry Scope - Extract" sap:VirtualizedContainerService.HintSize="520,830" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+    <ui:RetryScope sap2010:Annotation.AnnotationText="Extractors might need to make API calls. The retry mechanism is used to compensate for minor fluctuations in network stability and other recoverable issues.&#xA;&#xA;MaxExecutionAttemptsExtract overrides the default number of execution attempts." DisplayName="Retry Scope - Extract" sap:VirtualizedContainerService.HintSize="520,798" sap2010:WorkflowViewState.IdRef="RetryScope_1">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <p3:DataExtractionScope ClassificationResult="{x:Null}" sap2010:Annotation.AnnotationText="Using the in_ClassificationResult.DocumentTypeId instead of the whole classification result because the references &amp; token inside the classification result do not match split files." ApplyGenerativeValidation="False" DisplayName="Data Extraction Scope" DocumentObjectModel="[in_DOM]" DocumentPath="[in_TargetDocument]" DocumentText="[in_DocText]" DocumentTypeId="NoGroup.NoCategory.IRS990" ExtractionResult="[out_ExtractionResults]" FormatValuesIfPossible="True" GenerativeValidationConfidenceThreshold="99" sap:VirtualizedContainerService.HintSize="478,540.6666666666666" sap2010:WorkflowViewState.IdRef="DataExtractionScope_1" Taxonomy="[in_DocTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI82d393b482334979a6c6e730104e31ec&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;NoGroup.NoCategory.IRS990&quot;:{&quot;FieldMappings&quot;:{&quot;NoGroup.NoCategory.IRS990.org_name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.org_name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.form_year&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.form_year&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.form_type&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.form_type&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.principle_officer&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.principle_officer&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.ein&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.ein&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.principle_officer_address&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.principle_officer_address&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.contribution&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.contribution&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.contribution_prior&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.contribution_prior&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.total_revenue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.total_revenue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.total_revenue_prior&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.total_revenue_prior&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.employee_comp&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_hrs&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_hrs&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_org&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_org&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_relatedorg&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_relatedorg&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_other&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_other&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_address&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_address&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI82d393b482334979a6c6e730104e31ec&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI82d393b482334979a6c6e730104e31ec&quot;:[]}}">
+          <p3:DataExtractionScope ClassificationResult="{x:Null}" sap2010:Annotation.AnnotationText="Using the in_ClassificationResult.DocumentTypeId instead of the whole classification result because the references &amp; token inside the classification result do not match split files." ApplyGenerativeValidation="False" DisplayName="Data Extraction Scope" DocumentObjectModel="[in_DOM]" DocumentPath="[in_TargetDocument]" DocumentText="[in_DocText]" DocumentTypeId="NoGroup.NoCategory.IRS990" ExtractionResult="[out_ExtractionResults]" FormatValuesIfPossible="True" GenerativeValidationConfidenceThreshold="99" sap:VirtualizedContainerService.HintSize="478,540.6666666666666" sap2010:WorkflowViewState.IdRef="DataExtractionScope_1" Taxonomy="[in_DocTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI04916dbe0d324e45b94f80cc6255a164&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;NoGroup.NoCategory.IRS990&quot;:{&quot;FieldMappings&quot;:{&quot;NoGroup.NoCategory.IRS990.org_name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.org_name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;org_name\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.form_year&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.form_year&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;form_year\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.form_type&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.form_type&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;form_type\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.principle_officer&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.principle_officer&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;principle_officer\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.ein&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.ein&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;ein\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.principle_officer_address&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.principle_officer_address&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;field-1\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.contribution&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.contribution&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;field-5\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.contribution_prior&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.contribution_prior&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;field-4\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.total_revenue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.total_revenue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;field-7\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.total_revenue_prior&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.total_revenue_prior&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;field-6\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.employee_comp&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;items\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;keyemp_col_name\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_hrs&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_hrs&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;keyemp_col_hrs\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_org&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_org&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;keyemp_col_comp_org\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_relatedorg&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_relatedorg&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;keyemp_col_comp_relorg\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_other&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_comp_other&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;keyemp_col_comp_other\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_address&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.IRS990.employee_comp.keyemp_col_address&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;field-3\&quot;&quot;,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:&quot;\&quot;Form990\&quot;&quot;}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI04916dbe0d324e45b94f80cc6255a164&quot;:&quot;90&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI04916dbe0d324e45b94f80cc6255a164&quot;:[{&quot;FieldId&quot;:&quot;Form990&quot;,&quot;SubOptions&quot;:[{&quot;FieldId&quot;:&quot;org_name&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;form_year&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;form_type&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;principle_officer&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;ein&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;field-1&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;field-5&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;field-4&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;field-7&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;field-6&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;items&quot;,&quot;SubOptions&quot;:[{&quot;FieldId&quot;:&quot;keyemp_col_comp_other&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;keyemp_col_comp_relorg&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;keyemp_col_comp_org&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;keyemp_col_hrs&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;keyemp_col_name&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null},{&quot;FieldId&quot;:&quot;field-3&quot;,&quot;SubOptions&quot;:null,&quot;Metadata&quot;:null}],&quot;Metadata&quot;:null}],&quot;Metadata&quot;:null}]}}">
             <p3:DataExtractionScope.Extractors>
-              <p3:DuAppExtractor ErrorMessage="{x:Null}" DisplayName="Document Understanding Project Extractor" sap:VirtualizedContainerService.HintSize="222.66666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="DuAppExtractor_1" PersistenceId="UI82d393b482334979a6c6e730104e31ec" SelectedProject="IRS990" SelectedVersion="IRS990Extractor_Form990_v3" TimeoutMs="900000">
+              <p3:DuAppExtractor ErrorMessage="{x:Null}" DisplayName="Document Understanding Project Extractor" sap:VirtualizedContainerService.HintSize="222.66666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="DuAppExtractor_3" PersistenceId="UI04916dbe0d324e45b94f80cc6255a164" SelectedProject="IRS990" SelectedVersion="IRS990Extractorv4" TimeoutMs="900000">
                 <p3:DuAppExtractor.AvailableProjects>
                   <x:Array Type="x:String">
                     <x:String>Predefined</x:String>
-                    <x:String>eqwr</x:String>
-                    <x:String>AnatoliaManual</x:String>
-                    <x:String>TG_USPIS</x:String>
-                    <x:String>OMV Demo</x:String>
-                    <x:String>Contracts IAG</x:String>
-                    <x:String>test124</x:String>
-                    <x:String>Scania</x:String>
-                    <x:String>application_loan_hw_google</x:String>
-                    <x:String>LeasesProject</x:String>
-                    <x:String>radu_test</x:String>
-                    <x:String>application_loan_hw_msft</x:String>
-                    <x:String>modernandratest</x:String>
-                    <x:String>nnDemoProject</x:String>
-                    <x:String>Radu_OMV</x:String>
-                    <x:String>test123</x:String>
-                    <x:String>AndraSiemens</x:String>
-                    <x:String>Thai_UiPathOCR</x:String>
-                    <x:String>InvoicesTrainingDemo</x:String>
-                    <x:String>eg_du</x:String>
-                    <x:String>Invoices Demo</x:String>
-                    <x:String>PoCTotal</x:String>
-                    <x:String>MattDoverForms</x:String>
-                    <x:String>UL Remittance</x:String>
-                    <x:String>testw2</x:String>
-                    <x:String>VistraDemo</x:String>
-                    <x:String>Defra</x:String>
-                    <x:String>aaaaaa</x:String>
-                    <x:String>CPK DZU</x:String>
-                    <x:String>W9APIExtraction</x:String>
-                    <x:String>test_22131</x:String>
-                    <x:String>MultipleDocs_Radu</x:String>
-                    <x:String>TrainingExample</x:String>
-                    <x:String>Fin Statements</x:String>
-                    <x:String>Test1</x:String>
-                    <x:String>aswertgyhjkl</x:String>
-                    <x:String>esw</x:String>
-                    <x:String>nathanDemoDU</x:String>
-                    <x:String>Presales UKI</x:String>
-                    <x:String>Anwim</x:String>
-                    <x:String>AnatoliaRosedale</x:String>
-                    <x:String>Andra demoing DU</x:String>
-                    <x:String>Surrey_POC</x:String>
-                    <x:String>Paysafe Playground</x:String>
-                    <x:String>TroubleShoot Auto Retrain</x:String>
-                    <x:String>CPK</x:String>
-                    <x:String>IAG Demo</x:String>
-                    <x:String>E2E_Test</x:String>
-                    <x:String>VeloClassifier</x:String>
-                    <x:String>MKT_ZTE</x:String>
-                    <x:String>Q_ProjectCoveredByALE</x:String>
-                    <x:String>aaa</x:String>
-                    <x:String>VeloUmowaGot</x:String>
-                    <x:String>AnatoliaAirAndOceanBills</x:String>
-                    <x:String>VeloAllInOne</x:String>
-                    <x:String>JanneS Pension applications</x:String>
-                    <x:String>Invoices CR</x:String>
-                    <x:String>ALS</x:String>
-                    <x:String>Demo_project</x:String>
-                    <x:String>MyNewProject</x:String>
-                    <x:String>BusinessCards</x:String>
-                    <x:String>Thai_CJKOCR</x:String>
-                    <x:String>MONdziennik</x:String>
-                    <x:String>Test G4S</x:String>
-                    <x:String>ppDemo</x:String>
-                    <x:String>Andra BTEst</x:String>
-                    <x:String>Onat</x:String>
-                    <x:String>AnatoliaMSCUSA</x:String>
-                    <x:String>BCR_certif_energetic</x:String>
-                    <x:String>andretestmodern</x:String>
-                    <x:String>SofieneAttestationAssurance</x:String>
-                    <x:String>cs_project_modern</x:String>
-                    <x:String>TestOOTbModel</x:String>
-                    <x:String>nnDemo</x:String>
-                    <x:String>IRS990_RedactionTest</x:String>
-                    <x:String>Demo2</x:String>
-                    <x:String>new proj</x:String>
-                    <x:String>Ed_test</x:String>
-                    <x:String>Radu_Modern</x:String>
-                    <x:String>nyul</x:String>
-                    <x:String>Demo Puratos</x:String>
-                    <x:String>TaxForm</x:String>
-                    <x:String>AirAndOceanNEW</x:String>
-                    <x:String>PanasonicPO</x:String>
-                    <x:String>test12</x:String>
-                    <x:String>FinanceDU</x:String>
-                    <x:String>BugTataS</x:String>
-                    <x:String>Velo30</x:String>
-                    <x:String>AnatoliaAirAndOcean</x:String>
-                    <x:String>adidas_test</x:String>
-                    <x:String>TestAndra</x:String>
-                    <x:String>new experience</x:String>
-                    <x:String>Zurich_DigitalExperienceWeek</x:String>
-                    <x:String>MONclassicDemo</x:String>
-                    <x:String>DemoAndra2</x:String>
-                    <x:String>IRS990_RedactionTest_Pretrained</x:String>
-                    <x:String>AnatoliaUPS</x:String>
-                    <x:String>Invoices UL</x:String>
-                    <x:String>TP_DU_Project</x:String>
-                    <x:String>test andre</x:String>
-                    <x:String>nathanDemo</x:String>
-                    <x:String>Andra G4S Invoices</x:String>
-                    <x:String>DocProcessing</x:String>
-                    <x:String>Vodafone</x:String>
-                    <x:String>HM</x:String>
-                    <x:String>Puratos</x:String>
-                    <x:String>Podcast_project</x:String>
-                    <x:String>Lerner_Sandbox</x:String>
-                    <x:String>Thai_GoogleOCR</x:String>
-                    <x:String>cs_project_classic</x:String>
-                    <x:String>Demo</x:String>
-                    <x:String>BankStatementsTrain</x:String>
-                    <x:String>Nilekha213</x:String>
-                    <x:String>VGR</x:String>
-                    <x:String>edharrisssssssss</x:String>
-                    <x:String>Velo20</x:String>
-                    <x:String>aaaaaaaaaaa</x:String>
-                    <x:String>AnatoliaHapag</x:String>
-                    <x:String>TP_FormsAI_Learning</x:String>
-                    <x:String>test</x:String>
-                    <x:String>Skanska</x:String>
-                    <x:String>Surrey_TablePOC</x:String>
-                    <x:String>RS Components POs</x:String>
-                    <x:String>KRUK</x:String>
-                    <x:String>aaaaaaaaaaaa</x:String>
-                    <x:String>application_loan_hw_uipath</x:String>
-                    <x:String>AnatoliaUPSv2</x:String>
-                    <x:String>example</x:String>
-                    <x:String>Terminus</x:String>
-                    <x:String>Ryan</x:String>
-                    <x:String>testFrenchadmiral</x:String>
-                    <x:String>PurchaseOrderProject</x:String>
+                    <x:String>Rohit990ModernTest1</x:String>
+                    <x:String>IRS990</x:String>
                   </x:Array>
                 </p3:DuAppExtractor.AvailableProjects>
                 <p3:DuAppExtractor.AvailableVersions>
                   <x:Array Type="x:String">
-                    <x:String>IRS990-Custom-Redact-v3</x:String>
-                    <x:String>IRS990-Custom-Redact</x:String>
-                    <x:String>IRS990-Custom</x:String>
+                    <x:String>IRS990Extractorv4</x:String>
+                    <x:String>IRS990Extractor</x:String>
+                    <x:String>rohit-test-to-see-output-format</x:String>
                   </x:Array>
                 </p3:DuAppExtractor.AvailableVersions>
                 <p3:DuAppExtractor.DocumentBounds>
