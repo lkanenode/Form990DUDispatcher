@@ -22,7 +22,7 @@
       "DisplayName": "in_UseQueue",
       "Category": null,
       "Tooltip": "Variable that checks if the Document Understanding Process is using Orchestrator Queues or not.",
-      "Placeholder": "False",
+      "Placeholder": "True",
       "Widget": null,
       "IsRequired": false,
       "IsPrincipal": true,

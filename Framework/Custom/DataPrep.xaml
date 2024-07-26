@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>924,3702.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>598,3978.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_56_CustomExtractionDataPrep_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -102,33 +102,21 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_56_CustomExtractionDataPrep" sap:VirtualizedContainerService.HintSize="608,3638" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_56_CustomExtractionDataPrep" sap:VirtualizedContainerService.HintSize="608,3914" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataSet" Name="ExtResult_DS" />
-      <Variable x:TypeArguments="sd:DataTable" Name="Items_DT">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="New DataTable" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="scg:List(x:String)" Name="Extracted_Fields_List">
+      <Variable x:TypeArguments="sd:DataTable" Default="[New DataTable]" Name="Items_DT" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)()]" Name="Extracted_Fields_List" />
+      <Variable x:TypeArguments="s:String[]" Default="[New String(){}]" Name="Redact_Fields_Array" />
+      <Variable x:TypeArguments="x:String" Name="Redact_Names_Str" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="Extract_Names_List">
         <Variable.Default>
           <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="New List(Of String)()" />
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="s:String[]" Name="Redact_Fields_Array">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="New String(){}" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="Redact_Names_Str" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="Extract_Names_List" />
       <Variable x:TypeArguments="x:String" Name="principle_officer" />
       <Variable x:TypeArguments="x:String" Name="ein" />
-      <Variable x:TypeArguments="scg:List(s:String[])" Name="Redact_Fields_List">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="scg:List(s:String[])" ExpressionText="New List(Of String())()" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(s:String[])" Default="[New List(Of String())()]" Name="Redact_Fields_List" />
       <Variable x:TypeArguments="x:String" Default="Data\Input" Name="InputFolder" />
       <Variable x:TypeArguments="x:String" Default="Data\Output" Name="OutputFolder" />
     </Sequence.Variables>
@@ -143,16 +131,16 @@
         <OutArgument x:TypeArguments="sd:DataTable">[Items_DT]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataTable">[ExtResult_DS.Tables(2)]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable">[ExtResult_DS.Tables(1)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Items_DT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="546,564" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Items_DT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="546,840" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,364" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,640" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Comp_Name" />
             </Sequence.Variables>
@@ -161,7 +149,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap:VirtualizedContainerService.HintSize="450,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[Comp_Name]</OutArgument>
               </Assign.To>
@@ -169,7 +157,28 @@
                 <InArgument x:TypeArguments="x:String">[CurrentRow(0).ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="434,158.66666666666666" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[Comp_Name]" List="[Extract_Names_List]" />
+            <If Condition="[Not String.IsNullOrEmpty(Comp_Name)]" sap:VirtualizedContainerService.HintSize="450,434.6666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,246.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="354,158.66666666666666" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[Comp_Name]" List="[Extract_Names_List]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
