@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>924,4599.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>678,4776</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Redaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -136,7 +136,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Redaction" sap:VirtualizedContainerService.HintSize="688,4534.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Redaction" sap:VirtualizedContainerService.HintSize="688,4711.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TempPath" />
       <Variable x:TypeArguments="x:Boolean" Name="Silent" />
@@ -161,7 +161,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Data Redaction Started&quot;]" />
-    <If Condition="[in_WordsToRedactArr.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="626,4270" sap2010:WorkflowViewState.IdRef="If_7">
+    <If Condition="[in_WordsToRedactArr.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="626,4279.333333333333" sap2010:WorkflowViewState.IdRef="If_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -447,5 +447,6 @@
         </Sequence>
       </If.Else>
     </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[&quot;io_OutputFile: &quot; + io_OutputFile]" />
   </Sequence>
 </Activity>

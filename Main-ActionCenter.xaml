@@ -151,7 +151,7 @@
     </ui:InvokeWorkflowFile>
     <TryCatch DisplayName="Try Catch - Process File" sap:VirtualizedContainerService.HintSize="638.6666666666666,887.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
-        <Flowchart DisplayName="File Processing Flowchart" sap:VirtualizedContainerService.HintSize="600,625.3333333333334" sap2010:WorkflowViewState.IdRef="Flowchart_10">
+        <Flowchart DisplayName="File Processing Flowchart" sap:VirtualizedContainerService.HintSize="648,249.33333333333334" sap2010:WorkflowViewState.IdRef="Flowchart_10">
           <Flowchart.Variables>
             <Variable x:TypeArguments="p:DocumentTaxonomy" sap2010:Annotation.AnnotationText="Stores the project taxonomy against which the documents can be processed." Name="docTaxonomy" />
             <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="The text extracted from the target document." Name="docText" />
@@ -168,9 +168,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID11</x:Reference>
+            <x:Reference>__ReferenceID12</x:Reference>
           </Flowchart.StartNode>
-          <FlowStep x:Name="__ReferenceID11" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+          <FlowStep x:Name="__ReferenceID12" sap2010:WorkflowViewState.IdRef="FlowStep_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">90,94</av:Point>
@@ -195,7 +195,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
             <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_12">
+              <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">305,215</av:Point>
@@ -219,7 +219,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
                 <FlowStep.Next>
-                  <FlowDecision x:Name="__ReferenceID9" Condition="[string.IsNullOrWhiteSpace(in_TargetFile)]" DisplayName="Data Found?" sap:VirtualizedContainerService.HintSize="60.666666666666664,60.666666666666664" sap2010:WorkflowViewState.IdRef="FlowDecision_20">
+                  <FlowDecision x:Name="__ReferenceID10" Condition="[string.IsNullOrWhiteSpace(in_TargetFile)]" DisplayName="Data Found?" sap:VirtualizedContainerService.HintSize="60.666666666666664,60.666666666666664" sap2010:WorkflowViewState.IdRef="FlowDecision_20">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -232,7 +232,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <FlowDecision.True>
-                      <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+                      <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">285,575</av:Point>
@@ -258,7 +258,7 @@
                       </FlowStep>
                     </FlowDecision.True>
                     <FlowDecision.False>
-                      <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+                      <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">115,345</av:Point>
@@ -283,7 +283,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:InvokeWorkflowFile>
                         <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                          <FlowStep x:Name="__ReferenceID11" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">235,445</av:Point>
@@ -302,7 +302,7 @@
                                   <Variable x:TypeArguments="p2:ExtractionResult" sap2010:Annotation.AnnotationText="The results of the data extraction process." Name="extractionResults" />
                                 </TryCatch.Variables>
                                 <TryCatch.Try>
-                                  <Flowchart DisplayName="Process Each Document - Flowchart" sap:VirtualizedContainerService.HintSize="648,415.3333333333333" sap2010:WorkflowViewState.IdRef="Flowchart_13">
+                                  <Flowchart DisplayName="Process Each Document - Flowchart" sap:VirtualizedContainerService.HintSize="648,249.33333333333334" sap2010:WorkflowViewState.IdRef="Flowchart_13">
                                     <Flowchart.Variables>
                                       <Variable x:TypeArguments="x:Boolean" sap2010:Annotation.AnnotationText="Flag used for deciding if human validation is required in the extraction process." Name="extractionSuccessFlag" />
                                       <Variable x:TypeArguments="x:String" Name="OutputFile" />
@@ -319,9 +319,9 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <Flowchart.StartNode>
-                                      <x:Reference>__ReferenceID5</x:Reference>
+                                      <x:Reference>__ReferenceID6</x:Reference>
                                     </Flowchart.StartNode>
-                                    <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+                                    <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">150.5,117.5</av:Point>
@@ -349,7 +349,7 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:InvokeWorkflowFile>
                                       <FlowStep.Next>
-                                        <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+                                        <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">143.83333333333331,210.16666666666666</av:Point>
@@ -372,7 +372,7 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:InvokeWorkflowFile>
                                           <FlowStep.Next>
-                                            <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                                            <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_4">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">75,385</av:Point>
@@ -380,7 +380,7 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">130,455 130,505</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DataPrep - Invoke Workflow File (Framework\Custom\DataPrep.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_108" UnSafe="False" WorkflowFileName="Framework\Custom\DataPrep.xaml">
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DataPrep" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_108" UnSafe="False" WorkflowFileName="Framework\Custom\DataPrep.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
                                                   <InArgument x:TypeArguments="p2:ExtractionResult" x:Key="in_ExtractionResults">[extractionResults]</InArgument>
                                                   <InArgument x:TypeArguments="x:String" x:Key="in_InputFile">[in_TargetFile]</InArgument>
@@ -394,7 +394,7 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </ui:InvokeWorkflowFile>
                                               <FlowStep.Next>
-                                                <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+                                                <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_5">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:Point x:Key="ShapeLocation">75,505</av:Point>
@@ -402,7 +402,7 @@
                                                       <av:PointCollection x:Key="ConnectorLocation">185,540 295,540</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Redaction - Invoke Workflow File (Framework\Custom\Redaction.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_107" UnSafe="False" WorkflowFileName="Framework\Custom\Redaction.xaml">
+                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Redaction" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_107" UnSafe="False" WorkflowFileName="Framework\Custom\Redaction.xaml">
                                                     <ui:InvokeWorkflowFile.Arguments>
                                                       <InArgument x:TypeArguments="s:String[]" x:Key="in_WordsToRedactArr">[CombinedArr]</InArgument>
                                                       <InArgument x:TypeArguments="x:String" x:Key="in_InputFile">[OutputFile]</InArgument>
@@ -419,12 +419,12 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:InvokeWorkflowFile>
                                                   <FlowStep.Next>
-                                                    <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_6">
+                                                    <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_6">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <av:Point x:Key="ShapeLocation">295,505</av:Point>
                                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                          <av:PointCollection x:Key="ConnectorLocation">554.7333333333333,339.7066666666667 524.7333333333333,339.7066666666667 524.7333333333333,428.0066666666667 404.33333333333337,428.0066666666667</av:PointCollection>
+                                                          <av:PointCollection x:Key="ConnectorLocation">350,575 350,645</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <Sequence sap2010:Annotation.AnnotationText="Extraction Validation &amp; Extractor training" DisplayName="Validate &amp; Train Extractors" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_74">
@@ -549,6 +549,28 @@
                                                           </Assign.Value>
                                                         </Assign>
                                                       </Sequence>
+                                                      <FlowStep.Next>
+                                                        <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <av:Point x:Key="ShapeLocation">295,645</av:Point>
+                                                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                              <av:PointCollection x:Key="ConnectorLocation">405,680 457.3333333333333,680 457.3333333333333,540 405,540</av:PointCollection>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Verification" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_113" UnSafe="False" WorkflowFileName="Framework\Custom\Verification.xaml">
+                                                            <ui:InvokeWorkflowFile.Arguments>
+                                                              <InArgument x:TypeArguments="x:String" x:Key="in_InputFile">[OutputFile]</InArgument>
+                                                              <InOutArgument x:TypeArguments="x:String" x:Key="io_OutputFile">[OutputFile]</InOutArgument>
+                                                              <OutArgument x:TypeArguments="x:String" x:Key="out_pathRedacted">[PathRedacted]</OutArgument>
+                                                              <OutArgument x:TypeArguments="x:String" x:Key="out_pathStripped">[PathStripped]</OutArgument>
+                                                            </ui:InvokeWorkflowFile.Arguments>
+                                                          </ui:InvokeWorkflowFile>
+                                                          <FlowStep.Next>
+                                                            <x:Reference>__ReferenceID0</x:Reference>
+                                                          </FlowStep.Next>
+                                                        </FlowStep>
+                                                      </FlowStep.Next>
                                                     </FlowStep>
                                                   </FlowStep.Next>
                                                 </FlowStep>
@@ -558,7 +580,7 @@
                                         </FlowStep>
                                       </FlowStep.Next>
                                     </FlowStep>
-                                    <FlowDecision Condition="[extractionSuccessFlag]" DisplayName="Successul?" sap:VirtualizedContainerService.HintSize="60.666666666666664,60.666666666666664" sap2010:WorkflowViewState.IdRef="FlowDecision_22" True="{x:Reference __ReferenceID0}">
+                                    <FlowDecision Condition="[extractionSuccessFlag]" DisplayName="Successul?" sap:VirtualizedContainerService.HintSize="60.666666666666664,60.666666666666664" sap2010:WorkflowViewState.IdRef="FlowDecision_22" True="{x:Reference __ReferenceID1}">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -569,7 +591,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <FlowDecision.False>
-                                        <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_7">
+                                        <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_7">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">295,415</av:Point>
@@ -580,11 +602,12 @@
                                         </FlowStep>
                                       </FlowDecision.False>
                                     </FlowDecision>
-                                    <x:Reference>__ReferenceID1</x:Reference>
                                     <x:Reference>__ReferenceID2</x:Reference>
-                                    <x:Reference>__ReferenceID0</x:Reference>
                                     <x:Reference>__ReferenceID3</x:Reference>
+                                    <x:Reference>__ReferenceID1</x:Reference>
                                     <x:Reference>__ReferenceID4</x:Reference>
+                                    <x:Reference>__ReferenceID0</x:Reference>
+                                    <x:Reference>__ReferenceID5</x:Reference>
                                   </Flowchart>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
@@ -622,7 +645,7 @@
                               </TryCatch>
                             </Sequence>
                             <FlowStep.Next>
-                              <x:Reference>__ReferenceID6</x:Reference>
+                              <x:Reference>__ReferenceID7</x:Reference>
                             </FlowStep.Next>
                           </FlowStep>
                         </FlowStep.Next>
@@ -633,11 +656,11 @@
               </FlowStep>
             </FlowStep.Next>
           </FlowStep>
-          <x:Reference>__ReferenceID7</x:Reference>
-          <x:Reference>__ReferenceID6</x:Reference>
           <x:Reference>__ReferenceID8</x:Reference>
+          <x:Reference>__ReferenceID7</x:Reference>
           <x:Reference>__ReferenceID9</x:Reference>
           <x:Reference>__ReferenceID10</x:Reference>
+          <x:Reference>__ReferenceID11</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
