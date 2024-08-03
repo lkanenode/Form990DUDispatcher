@@ -1,10 +1,22 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Verification" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p1="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Verification" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p1="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_InputFile" Type="InArgument(x:String)" />
     <x:Property Name="io_OutputFile" Type="InOutArgument(x:String)" />
     <x:Property Name="out_pathRedacted" Type="OutArgument(x:String)" />
     <x:Property Name="out_pathStripped" Type="OutArgument(x:String)" />
+    <x:Property Name="in_ValidatedResults" Type="InArgument(p:ExtractionResult)" />
+    <x:Property Name="in_apiKey" Type="InArgument(x:String)" />
+    <x:Property Name="in_ocrEndpoint" Type="InArgument(x:String)" />
   </x:Members>
+  <this:Verification.in_ValidatedResults>
+    <InArgument x:TypeArguments="p:ExtractionResult" />
+  </this:Verification.in_ValidatedResults>
+  <this:Verification.in_apiKey>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Verification.in_apiKey>
+  <this:Verification.in_ocrEndpoint>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Verification.in_ocrEndpoint>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -93,7 +105,6 @@
       <Variable x:TypeArguments="p:ExtractionResult" Name="ExtResult" />
       <Variable x:TypeArguments="x:String" Name="DocText" />
       <Variable x:TypeArguments="p1:Document" Name="DOM" />
-      <Variable x:TypeArguments="p:ExtractionResult" Name="ValidatedResults" />
       <Variable x:TypeArguments="p:ResultsValue[]" Name="RedactionValues" />
       <Variable x:TypeArguments="s:String[]" Name="RedactionArr" />
       <Variable x:TypeArguments="x:String" Name="RedactionStr">
@@ -102,8 +113,6 @@
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:Int32" Name="i" />
-      <Variable x:TypeArguments="x:String" Name="apiKey" />
-      <Variable x:TypeArguments="x:String" Name="ocrEndpoint" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -115,7 +124,7 @@
         <OutArgument x:TypeArguments="p:ResultsValue[]">[RedactionValues]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="p:ResultsValue[]">[ValidatedResults.ResultsDocument.Fields(0).Values]</InArgument>
+        <InArgument x:TypeArguments="p:ResultsValue[]">[in_ValidatedResults.ResultsDocument.Fields(0).Values]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:ForEach x:TypeArguments="p:ResultsValue" CurrentIndex="[i]" DisplayName="For Each Value" sap:VirtualizedContainerService.HintSize="530,344" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RedactionValues]">
@@ -169,8 +178,8 @@
         <InArgument x:TypeArguments="s:String[]" x:Key="in_WordsToRedactArr">[RedactionArr]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_InputFile">[in_InputFile]</InArgument>
         <InOutArgument x:TypeArguments="x:String" x:Key="io_OutputFile">[io_OutputFile]</InOutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_apiKey">[apiKey]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ocrEndpoint">[ocrEndpoint]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_apiKey">[in_apiKey]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ocrEndpoint">[in_ocrEndpoint]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_pathStripped">[out_pathStripped]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_pathRedacted">[out_pathRedacted]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
